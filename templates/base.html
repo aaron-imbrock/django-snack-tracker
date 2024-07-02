@@ -1,0 +1,18 @@
+{% load compress %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        {% compress css %}
+        <link rel="stylesheet" href="{% static 'src/output.css' %}">
+        {% endcompress %}
+
+        <title>Snacks</title>
+    </head>
+    <body>
+        {% block content %}
+            <h1>Missing Content, hi!</h1>
+        {% endblock content %}
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.js"></script>
+</html>
