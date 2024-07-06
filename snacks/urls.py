@@ -1,8 +1,10 @@
 from django.urls import path
 
-from .views import HomePageView
+from .views import SnackListView, SnackDetailView
 
 urlpatterns = [
-    path('', HomePageView.as_view(), name='snack_list'),
-    #path('snack_list', SnackListPageView.as_view(), name='snack_list')
+    path('', SnackListView.as_view(), name='snack_list'),
+    
+    #int:pk is a reference the database item ID
+    path('<int:pk>',SnackDetailView.as_view(), name = "snack_detail")
 ]
