@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'debug_toolbar',
     'snacks',
-    # 'compressor'
+    'compressor'
 ]
 
 MIDDLEWARE = [
@@ -134,10 +134,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # To test compression when DEBUG is True COMPRESS_ENABLED must also be set to True.
 # COMPRESS_ROOT = BASE_DIR / 'static/src'
-# COMPRESS_ENABLED = True
-# STATICFILES_FINDERS = (
-#     'compressor.finders.CompressorFinder',
-# )
+COMPRESS_ENABLED = True
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+)
 
 # django-debug-toolbar
 import socket
